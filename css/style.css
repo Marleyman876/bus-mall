@@ -1,0 +1,31 @@
+body{
+  background-color: aqua;
+}
+h1{
+  font-weight: bold;
+  text-align: center;
+  font-size: 3em
+}
+h2{
+  font-weight: bold;
+  text-align: center;
+  font-size: 2em
+}
+section img{
+  width: 300px;
+  border-radius: 25px;
+   
+}
+section{
+  margin: auto;
+  width: max-content;
+  margin-top: 250px;
+  border-radius: 25px;
+}
+
+#final{
+ margin-left: 50%;
+}
+ul{
+  text-align: center;
+}
