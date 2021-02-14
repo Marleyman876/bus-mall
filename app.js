@@ -64,7 +64,6 @@ function renderProducts() {
   while (indexArray[2] === indexArray[0]) {
     indexArray[0] = getRandomProducts();
   }
-  console.log(indexArray);
 
   productOne.src = allProducts[indexArray[0]].src;
   productOne.title = allProducts[indexArray[0]].name;
@@ -85,7 +84,7 @@ function renderClickResults() {
   let myClicks = document.querySelector('ul');
   for (let i = 0; i < allProducts.length; i++) {
     let li = document.createElement('li');
-    li.textContent = `${allProducts[i].name} had ${allProducts[i].views} votes, and was seen by users ${allProducts[i].views} times`;
+    li.textContent = `${allProducts[i].name} had ${allProducts[i].views} votes, and was seen${allProducts[i].views} time`;
     myClicks.appendChild(li);
 
   }

@@ -13,12 +13,14 @@ h2{
 }
 section img{
   width: 300px;
-  
+  border-radius: 25px;
+   
 }
 section{
   margin: auto;
   width: max-content;
   margin-top: 250px;
+  border-radius: 25px;
 }
 
 #final{
