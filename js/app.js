@@ -8,7 +8,7 @@ let allProducts = [];
 let productOne = document.querySelector('section img:first-child');
 let productTwo = document.querySelector('section img:nth-child(2)');
 let productThree = document.querySelector('section img:nth-child(3)');
-let resultsClicked = document.querySelector('section');
+let section = document.querySelector('section');
 let buttonResult = document.getElementById('final');
 
 //Constructor 
@@ -92,7 +92,7 @@ function renderClickResults() {
 }
 
 function clickHandler(event) {
-  if (event.target === resultsClicked) {
+  if (event.target === section) {
     alert('Please click an image as per the instructions');
   }
   sumClicks++;
@@ -101,12 +101,12 @@ function clickHandler(event) {
 
   for (let i = 0; i < allProducts.length; i++) {
     if (clickedItem === allProducts[i].name) {
-      allProducts[i].sumClicks++;
+      allProducts[i].clicks++;
     }
   }
   renderProducts();
   if (sumClicks === allowedClicks) {
-    resultsClicked.removeEventListener('click', clickHandler);
+    section.removeEventListener('click', clickHandler);
 
   }
 }
@@ -118,6 +118,6 @@ function buttonClick(event) {
 
 renderProducts();
 
-resultsClicked.addEventListener('click', clickHandler);
+section.addEventListener('click', clickHandler);
 
 buttonResult.addEventListener('click', renderClickResults);
