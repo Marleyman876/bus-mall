@@ -3,7 +3,7 @@
 
 
 let sumClicks = 0;
-let allowedClicks = 25;
+let allowedClicks = 10;
 let allProducts = [];
 let productOne = document.querySelector('section img:first-child');
 let productTwo = document.querySelector('section img:nth-child(2)');
@@ -84,7 +84,7 @@ function renderClickResults() {
   let myClicks = document.querySelector('ul');
   for (let i = 0; i < allProducts.length; i++) {
     let li = document.createElement('li');
-    li.textContent = `${allProducts[i].name} had ${allProducts[i].views} votes, and was seen${allProducts[i].views} time`;
+    li.textContent = `${allProducts[i].name} had ${allProducts[i].clicks} votes, and was seen ${allProducts[i].views} times`;
     myClicks.appendChild(li);
 
   }
