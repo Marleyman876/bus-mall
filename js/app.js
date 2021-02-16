@@ -3,7 +3,7 @@
 
 
 let sumClicks = 0;
-let allowedClicks = 10;
+let allowedClicks = 25;
 let allProducts = [];
 let productOne = document.querySelector('section img:first-child');
 let productTwo = document.querySelector('section img:nth-child(2)');
