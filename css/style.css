@@ -30,3 +30,10 @@ section{
 ul{
   text-align: center;
 }
+
+#Chart{
+height: 500px;
+width: 900px;
+margin: auto;
+background-color:whitesmoke;
+}
