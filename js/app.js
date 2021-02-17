@@ -49,9 +49,8 @@ new Product('wine-glass');
 function getRandomProducts() {
   return Math.floor(Math.random() * allProducts.length);
 }
-//new steps 
 
-
+//function to show random products
 
 function renderProducts() {
   while (indexArray.length < imageCount) {
@@ -79,19 +78,6 @@ function renderProducts() {
   allProducts[productThreeIndex].views++;
 }
 
-//render function 
-
-// function renderClickResults() {
-//   let myClicks = document.querySelector('ul');
-//   for (let i = 0; i < allProducts.length; i++) {
-//     let li = document.createElement('li');
-//     li.textContent = `${allProducts[i].name} had ${allProducts[i].clicks} votes, and was seen ${allProducts[i].views} times`;
-//     myClicks.appendChild(li);
-
-//   }
-
-// }
-
 function clickHandler(event) {
   if (event.target === section) {
     alert('Please click an image as per the instructions');
@@ -112,21 +98,18 @@ function clickHandler(event) {
   }
 }
 
-
 function buttonClick(event) {
   if (sumClicks === allowedClicks) {
-    
+
   }
 }
 section.addEventListener('click', clickHandler);
 
 renderProducts();
 
+//render chart
 
-
-//render chart 
-
-function renderChart(){
+function renderChart() {
   let productNames = [];
   let productViews = [];
   let productClicks = [];
@@ -170,6 +153,3 @@ function renderChart(){
 }
 
 renderChart();
-
-
-//buttonResult.addEventListener('click', renderClickResults);
