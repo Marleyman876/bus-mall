@@ -125,31 +125,44 @@ function renderChart() {
       datasets: [{
         label: 'Views',
         data: productViews,
-        backgroundColor: 'rgba(255, 99, 132, 0.2)',
-        borderColor: 'rgba(255, 99, 132, 1)',
-        borderWidth: 1,
+        backgroundColor: 'rgb(159,170,174,0.8)',
+        borderColor: 'rgb 26,57,76',
+        borderWidth: 2,
       },
       {
         label: 'Clicks',
         data: productClicks,
-        backgroundColor: 'blue',
-        borderColor: 'blue',
+        backgroundColor: 'black',
+        borderColor: 'yellow',
         borderWidth: 1,
       }],
     },
     options: {
-      scales: {
-        yAxes: [{
-          ticks: {
-            beginAtZero: true,
-            stepSize: 1,
-          },
-        }],
-      },
-    },
-  };
-  let ctx = document.getElementById('myChart').getContext('2d');
-  let myChart = new Chart(ctx, chartObject);
-}
+      
+      legend:{
+        labels:{
+          fontColor: 'white',
+        },
 
-renderChart();
+      },
+  scales: {
+    xAxes: [{
+      ticks: {
+        fontColor:'black',
+        beginAtZero: true,
+        stepSize: 1,
+      },
+    }],
+    yAxes: [{
+      ticks: {
+        fontColor:'yellow',
+        beginAtZero: true,
+        stepSize: 1,
+      },
+    }],
+      },
+},
+  };
+let ctx = document.getElementById('resultChart').getContext('2d');
+let myChart = new Chart(ctx, chartObject);
+}

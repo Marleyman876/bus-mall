@@ -1,5 +1,5 @@
 body{
-  background-color: aqua;
+  background-color: rgba(29, 73, 89, 0.79);
 }
 h1{
   font-weight: bold;
@@ -35,5 +35,4 @@ ul{
 height: 500px;
 width: 900px;
 margin: auto;
-background-color:whitesmoke;
 }
