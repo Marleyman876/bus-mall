@@ -50,6 +50,12 @@ function getRandomProducts() {
   return Math.floor(Math.random() * allProducts.length);
 }
 
+function assignImage(productElement,productIndex){
+  productElement.src = allProducts[productIndex].src;
+  productElement.title = allProducts[productIndex].name;
+  allProducts[productIndex].views++;
+
+}
 //function to show random products
 
 function renderProducts() {
@@ -65,17 +71,11 @@ function renderProducts() {
   let productTwoIndex = indexArray.shift();
   let productThreeIndex = indexArray.shift();
 
-  productOne.src = allProducts[productOneIndex].src;
-  productOne.title = allProducts[productOneIndex].name;
-  allProducts[productOneIndex].views++;
+  assignImage(productOne,productOneIndex);
+  assignImage(productTwo,productTwoIndex);
+  assignImage(productThree,productThreeIndex);
 
-  productTwo.src = allProducts[productTwoIndex].src;
-  productTwo.title = allProducts[productTwoIndex].name;
-  allProducts[productTwoIndex].views++;
-
-  productThree.src = allProducts[productThreeIndex].src;
-  productThree.title = allProducts[productThreeIndex].name;
-  allProducts[productThreeIndex].views++;
+ 
 }
 
 function clickHandler(event) {
