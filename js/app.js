@@ -6,7 +6,7 @@ let sumClicks = 0;
 let allowedClicks = 25;
 let allProducts = [];
 let indexArray = [];
-let imageCount = 6;
+let imgCount = 6;
 let productOne = document.querySelector('section img:first-child');
 let productTwo = document.querySelector('section img:nth-child(2)');
 let productThree = document.querySelector('section img:nth-child(3)');
@@ -23,26 +23,39 @@ function Product(name, fileExtension = 'jpg') {
   allProducts.push(this);
 
 }
-new Product('bag');
-new Product('banana');
-new Product('bathroom');
-new Product('boots');
-new Product('breakfast');
-new Product('bubblegum');
-new Product('chair');
-new Product('cthulhu');
-new Product('dog-duck');
-new Product('dragon');
-new Product('pen');
-new Product('pet-sweep');
-new Product('scissors');
-new Product('shark');
-new Product('sweep', 'png');
-new Product('tauntaun');
-new Product('unicorn');
-new Product('usb', 'gif');
-new Product('water-can');
-new Product('wine-glass');
+
+// local storage 
+
+let storedItems = localStorage.getItem('item');
+
+if(storedItems){
+  let parsedItem = JSON.parse(storedItems)
+  allProducts = parsedItem;
+  console.log(parsedItem);
+}else{
+  new Product('bag');
+  new Product('banana');
+  new Product('bathroom');
+  new Product('boots');
+  new Product('breakfast');
+  new Product('bubblegum');
+  new Product('chair');
+  new Product('cthulhu');
+  new Product('dog-duck');
+  new Product('dragon');
+  new Product('pen');
+  new Product('pet-sweep');
+  new Product('scissors');
+  new Product('shark');
+  new Product('sweep', 'png');
+  new Product('tauntaun');
+  new Product('unicorn');
+  new Product('usb', 'gif');
+  new Product('water-can');
+  new Product('wine-glass');
+}
+
+
 
 //function for getting products at random
 
@@ -59,23 +72,23 @@ function assignImage(productElement,productIndex){
 //function to show random products
 
 function renderProducts() {
-  while (indexArray.length < imageCount) {
+  while(indexArray.length < imgCount) {
     let randomProducts = getRandomProducts();
-    while (!indexArray.includes(randomProducts)) {
+    while(!indexArray.includes(randomProducts)) {
       indexArray.push(randomProducts)
     }
   }
   console.log(indexArray);
-
+ 
+  
   let productOneIndex = indexArray.shift();
   let productTwoIndex = indexArray.shift();
   let productThreeIndex = indexArray.shift();
-
+  
   assignImage(productOne,productOneIndex);
   assignImage(productTwo,productTwoIndex);
   assignImage(productThree,productThreeIndex);
-
- 
+  
 }
 
 function clickHandler(event) {
@@ -95,6 +108,9 @@ function clickHandler(event) {
   if (sumClicks === allowedClicks) {
     section.removeEventListener('click', clickHandler);
     renderChart();
+    let stringifiedItems = JSON.stringify(allProducts);
+
+    localStorage.setItem('item', stringifiedItems)
   }
 }
 
